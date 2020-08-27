@@ -49,6 +49,6 @@ export default {
   },
 
   shapes: {
-    borderRadius: 0.4,
+    borderRadius: (unit / 2),
   },
 };
