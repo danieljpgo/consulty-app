@@ -23,7 +23,7 @@ const App: React.FC = () => {
     return (
       <ThemeProvider theme={light}>
         <Landing />
-        <StatusBar style="auto" />
+        <StatusBar style="light" />
       </ThemeProvider>
     );
   }

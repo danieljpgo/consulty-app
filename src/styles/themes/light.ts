@@ -9,6 +9,7 @@ export default {
 
   fontSize: {
     large: 20,
+    medium: 12,
   },
 
   colors: {

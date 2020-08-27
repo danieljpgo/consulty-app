@@ -43,6 +43,7 @@ interface Shapes {
 
 interface FontSize {
   large: number,
+  medium: number,
 }
 
 declare module 'styled-components' {

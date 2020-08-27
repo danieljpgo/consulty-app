@@ -1,6 +1,5 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { Container, Hero, ButtonContainer, ActionsContainer, Connetions } from './styles';
+import { Container, Hero, ButtonContainer, ActionsContainer, Connetions, Content } from './styles';
 import Title from '../../common/components/Title';
 import Button from '../../common/components/Button';
 import heroImg from '../../common/assets/images/landing.png';
@@ -13,32 +12,34 @@ const Landing: React.FC = () => {
     <Container>
       <Hero source={heroImg} />
 
-      <Title>Seja bem-vindo</Title>
-      <Title bold>O que deseja fazer?</Title>
+      <Content>
+        <Title>Seja bem-vindo</Title>
+        <Title bold>O que deseja fazer?</Title>
 
-      <ActionsContainer>
-        <ButtonContainer>
-          <Button
-            variants="primary"
-            source={studyIcon}
-          >
-            Estudar
+        <ActionsContainer>
+          <ButtonContainer>
+            <Button
+              variants="primary"
+              source={studyIcon}
+            >
+              Estudar
           </Button>
-        </ButtonContainer>
+          </ButtonContainer>
 
-        <ButtonContainer>
-          <Button
-            variants="secundary"
-            source={giveClassesIcon}
-          >
-            Dar Aulas
+          <ButtonContainer>
+            <Button
+              variants="secundary"
+              source={giveClassesIcon}
+            >
+              Dar Aulas
           </Button>
-        </ButtonContainer>
-      </ActionsContainer>
+          </ButtonContainer>
+        </ActionsContainer>
 
-      <Connetions>
-        Teste
-      </Connetions>
+        <Connetions>
+          Total de 385 conexões já realizadas
+        </Connetions>
+      </Content>
     </Container>
   );
 };
