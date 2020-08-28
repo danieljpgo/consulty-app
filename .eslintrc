@@ -1,0 +1,12 @@
+{
+  "extends": "react-native-wcandillon",
+  "rules": {
+    "quotes": [
+      "error",
+      "single",
+      {
+        "allowTemplateLiterals": true
+      }
+    ]
+  }
+}

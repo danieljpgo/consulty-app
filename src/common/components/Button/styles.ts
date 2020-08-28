@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native';
 
 interface ButtonProps {
-  variants: 'primary' | 'secundary',
+  variants: 'primary' | 'secundary';
 }
 
 const variants = {
@@ -27,6 +27,4 @@ export const Text = styled.Text`
   color: ${(props) => props.theme.colors.text.constrast};
 `;
 
-export const Image = styled.Image`
-
-`;
+export const Image = styled.Image``;

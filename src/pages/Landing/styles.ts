@@ -16,7 +16,7 @@ export const Content = styled.View`
 export const Hero = styled.Image`
   width: 100%;
   height: 242px;
-  resizeMode: contain;
+  resizemode: contain;
   margin-bottom: ${(props) => props.theme.unit * 2}px;
 `;
 
@@ -28,13 +28,13 @@ export const ActionsContainer = styled.View`
 `;
 
 export const ButtonContainer = styled.View`
-  width: ${(props) => (screenWidth / 2) - props.theme.unit * 2.5}px;
+  width: ${(props) => screenWidth / 2 - props.theme.unit * 2.5}px;
 `;
 
 export const Connetions = styled.Text`
   font-family: 'Poppins_400Regular';
   font-size: ${(props) => props.theme.fontSize.medium}px;
   color: ${(props) => props.theme.colors.title.base};
-  max-width: ${(props) => (screenWidth / 2) - props.theme.unit * 3}px;
+  max-width: ${(props) => screenWidth / 2 - props.theme.unit * 3}px;
   margin-top: ${(props) => props.theme.unit * 2}px;
 `;

@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native';
 
 interface TitleProps {
-  bold?: boolean,
+  bold?: boolean;
 }
 
 const Title = styled.Text<TitleProps>`
@@ -9,9 +9,11 @@ const Title = styled.Text<TitleProps>`
   font-family: 'Poppins_400Regular';
   font-size: ${(props) => props.theme.fontSize.large}px;
 
-  ${(props) => props.bold && css`
-    font-family: 'Poppins_600SemiBold';
-  `}
+  ${(props) =>
+    props.bold &&
+    css`
+      font-family: 'Poppins_600SemiBold';
+    `}
 `;
 
 export default Title;

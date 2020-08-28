@@ -1,11 +1,20 @@
+/* eslint-disable camelcase */
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import Landing from './src/pages/Landing';
 import { AppLoading } from 'expo';
 import { ThemeProvider } from 'styled-components';
+import {
+  Archivo_400Regular,
+  Archivo_700Bold,
+  useFonts,
+} from '@expo-google-fonts/archivo';
+import {
+  Poppins_400Regular,
+  Poppins_600SemiBold,
+} from '@expo-google-fonts/poppins';
+
 import light from './src/styles/themes/light';
-import { Archivo_400Regular, Archivo_700Bold, useFonts } from '@expo-google-fonts/archivo'
-import { Poppins_400Regular, Poppins_600SemiBold } from '@expo-google-fonts/poppins'
+import Landing from './src/pages/Landing';
 
 const App: React.FC = () => {
   const [fontLoaded] = useFonts({
@@ -16,9 +25,7 @@ const App: React.FC = () => {
   });
 
   if (!fontLoaded) {
-    return (
-      <AppLoading />
-    );
+    return <AppLoading />;
   } else {
     return (
       <ThemeProvider theme={light}>
@@ -27,6 +34,6 @@ const App: React.FC = () => {
       </ThemeProvider>
     );
   }
-}
+};
 
 export default App;

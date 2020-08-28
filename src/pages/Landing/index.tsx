@@ -1,11 +1,21 @@
 import React from 'react';
-import { Container, Hero, ButtonContainer, ActionsContainer, Connetions, Content } from './styles';
+import { Image } from 'react-native';
+
 import Title from '../../common/components/Title';
 import Button from '../../common/components/Button';
+import heartIcon from '../../common/assets/images/icons/heart.png';
 import heroImg from '../../common/assets/images/landing.png';
 import studyIcon from '../../common/assets/images/icons/study.png';
 import giveClassesIcon from '../../common/assets/images/icons/give-classes.png';
 
+import {
+  Container,
+  Hero,
+  ButtonContainer,
+  ActionsContainer,
+  Connetions,
+  Content,
+} from './styles';
 
 const Landing: React.FC = () => {
   return (
@@ -18,26 +28,20 @@ const Landing: React.FC = () => {
 
         <ActionsContainer>
           <ButtonContainer>
-            <Button
-              variants="primary"
-              source={studyIcon}
-            >
+            <Button variants="primary" source={studyIcon}>
               Estudar
-          </Button>
+            </Button>
           </ButtonContainer>
 
           <ButtonContainer>
-            <Button
-              variants="secundary"
-              source={giveClassesIcon}
-            >
+            <Button variants="secundary" source={giveClassesIcon}>
               Dar Aulas
-          </Button>
+            </Button>
           </ButtonContainer>
         </ActionsContainer>
 
         <Connetions>
-          Total de 385 conexões já realizadas
+          Total de 385 conexões já realizadas <Image source={heartIcon} />
         </Connetions>
       </Content>
     </Container>

@@ -2,7 +2,7 @@ import colors from '../colors';
 
 export const unit = 16;
 
-export default {
+const theme = {
   title: 'light',
 
   unit,
@@ -50,6 +50,8 @@ export default {
   },
 
   shapes: {
-    borderRadius: (unit / 2),
+    borderRadius: unit / 2,
   },
 };
+
+export default theme;
