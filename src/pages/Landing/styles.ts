@@ -16,7 +16,6 @@ export const Content = styled.View`
 export const Hero = styled.Image`
   width: 100%;
   height: 242px;
-  resizemode: contain;
   margin-bottom: ${(props) => props.theme.unit * 2}px;
 `;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 import Title from '../../common/components/Title';
 import Button from '../../common/components/Button';
@@ -18,9 +19,15 @@ import {
 } from './styles';
 
 const Landing: React.FC = () => {
+  const navigation = useNavigation();
+
+  function handleNavigatePage(router: string) {
+    navigation.navigate(router);
+  }
+
   return (
     <Container>
-      <Hero source={heroImg} />
+      <Hero source={heroImg} style={{ resizeMode: 'contain' }} />
 
       <Content>
         <Title>Seja bem-vindo</Title>
@@ -34,7 +41,11 @@ const Landing: React.FC = () => {
           </ButtonContainer>
 
           <ButtonContainer>
-            <Button variants="secundary" source={giveClassesIcon}>
+            <Button
+              variants="secundary"
+              onPress={() => handleNavigatePage('Classes')}
+              source={giveClassesIcon}
+            >
               Dar Aulas
             </Button>
           </ButtonContainer>

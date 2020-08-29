@@ -14,7 +14,7 @@ import {
 } from '@expo-google-fonts/poppins';
 
 import light from './src/styles/themes/light';
-import Landing from './src/pages/Landing';
+import AppStack from './src/routes/AppStack';
 
 const App: React.FC = () => {
   const [fontLoaded] = useFonts({
@@ -29,7 +29,7 @@ const App: React.FC = () => {
   } else {
     return (
       <ThemeProvider theme={light}>
-        <Landing />
+        <AppStack />
         <StatusBar style="light" />
       </ThemeProvider>
     );

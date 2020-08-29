@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components/native';
+import { RectButton } from 'react-native-gesture-handler';
 
 interface ButtonProps {
   variants: 'primary' | 'secundary';
@@ -13,7 +14,8 @@ const variants = {
   `,
 };
 
-export const Container = styled.TouchableOpacity<ButtonProps>`
+// eslint-disable-next-line prettier/prettier
+export const Container = styled(RectButton) <ButtonProps>`
   justify-content: space-between;
   height: 150px;
   border-radius: ${(props) => props.theme.shapes.borderRadius}px;
