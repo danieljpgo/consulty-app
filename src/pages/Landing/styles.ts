@@ -32,7 +32,7 @@ export const ButtonContainer = styled.View`
 
 export const Connetions = styled.Text`
   font-family: 'Poppins_400Regular';
-  font-size: ${(props) => props.theme.fontSize.medium}px;
+  font-size: ${(props) => props.theme.fontSize.small}px;
   color: ${(props) => props.theme.colors.title.base};
   max-width: ${(props) => screenWidth / 2 - props.theme.unit * 3}px;
   margin-top: ${(props) => props.theme.unit * 2}px;

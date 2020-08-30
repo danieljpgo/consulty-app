@@ -25,6 +25,7 @@ interface Colors {
   };
   warning: string;
   text: {
+    light: string;
     base: string;
     constrast: string;
   };
@@ -42,8 +43,10 @@ interface Shapes {
 }
 
 interface FontSize {
+  xlarge: number;
   large: number;
   medium: number;
+  small: number;
 }
 
 declare module 'styled-components' {

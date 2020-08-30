@@ -30,21 +30,26 @@ const Landing: React.FC = () => {
       <Hero source={heroImg} style={{ resizeMode: 'contain' }} />
 
       <Content>
-        <Title>Seja bem-vindo</Title>
-        <Title bold>O que deseja fazer?</Title>
+        <Title fontFamily="Poppins" size="large">
+          Seja bem-vindo
+        </Title>
+        <Title fontFamily="Poppins" size="large" bold>
+          O que deseja fazer?
+        </Title>
 
         <ActionsContainer>
           <ButtonContainer>
-            <Button variants="primary" source={studyIcon}>
+            <Button size="large" variants="primary" source={studyIcon}>
               Estudar
             </Button>
           </ButtonContainer>
 
           <ButtonContainer>
             <Button
+              size="large"
               variants="secundary"
-              onPress={() => handleNavigatePage('Classes')}
               source={giveClassesIcon}
+              onPress={() => handleNavigatePage('Classes')}
             >
               Dar Aulas
             </Button>

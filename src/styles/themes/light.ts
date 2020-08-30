@@ -8,8 +8,10 @@ const theme = {
   unit,
 
   fontSize: {
+    xlarge: 32,
     large: 20,
-    medium: 12,
+    medium: 16,
+    small: 12,
   },
 
   colors: {
@@ -28,6 +30,7 @@ const theme = {
     },
     warning: colors.red['300'],
     text: {
+      light: colors.purple['100'],
       base: colors.purple['200'],
       constrast: colors.white,
     },
