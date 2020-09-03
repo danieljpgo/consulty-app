@@ -1,7 +1,7 @@
 import React from 'react';
 import { ImageSourcePropType } from 'react-native';
 
-import { Container, Text, Image } from './styles';
+import { Container, Image, Text } from './styles';
 
 interface Props {
   variants: 'primary' | 'secundary';

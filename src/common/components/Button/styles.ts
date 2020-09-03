@@ -18,12 +18,12 @@ const variants = {
 
 const size = {
   large: css`
-    height: 150px;
+    height: ${(props) => props.theme.unit * 10}px;
     padding: ${(props) => props.theme.unit * 1.5}px;
   `,
   small: css`
-    height: 58px;
-    padding: ${(props) => props.theme.unit}px;
+    height: ${(props) => props.theme.unit * 4}px;
+    padding: ${(props) => props.theme.unit * 1}px;
   `,
 };
 

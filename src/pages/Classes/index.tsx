@@ -14,13 +14,13 @@ const Classes: React.FC = () => {
         <Title fontFamily="Archivo" size="xlarge" bold>
           Quer ser um proffy?
         </Title>
-        <Text fontFamily="Poppins">
+        <Text fontFamily="Poppins" size="medium">
           Para começar, você precisa se cadastrar como professor na nossa
           plataforma web
         </Text>
       </BackgroundImg>
 
-      <Button variants="secundary" align="center">
+      <Button variants="secundary" size="small" align="center">
         ok
       </Button>
     </Container>
