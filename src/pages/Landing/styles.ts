@@ -1,9 +1,9 @@
 import styled from 'styled-components/native';
 import { Dimensions } from 'react-native';
 
-const screenWidth = Dimensions.get('window').width;
-
 import Text from '../../common/components/Text';
+
+const screenWidth = Dimensions.get('window').width;
 
 export const Container = styled.View`
   background-color: ${(props) => props.theme.colors.primary.main};

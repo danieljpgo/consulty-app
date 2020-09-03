@@ -5,6 +5,8 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Landing from '../pages/Landing';
 import Classes from '../pages/Classes';
 
+import AppTabs from './AppTabs';
+
 const { Navigator, Screen } = createStackNavigator();
 
 const AppStack: React.FC = () => (
@@ -12,6 +14,7 @@ const AppStack: React.FC = () => (
     <Navigator screenOptions={{ headerShown: false }}>
       <Screen name="Landing" component={Landing} />
       <Screen name="Classes" component={Classes} />
+      <Screen name="Tabs" component={AppTabs} />
     </Navigator>
   </NavigationContainer>
 );

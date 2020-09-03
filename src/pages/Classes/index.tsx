@@ -1,26 +1,36 @@
 import React from 'react';
+import { useNavigation } from '@react-navigation/native';
 
 import backgroundClassesPage from '../../common/assets/images/give-classes-background.png';
-import Title from '../../common/components/Title';
-import Text from '../../common/components/Text';
 import Button from '../../common/components/Button';
 
-import { Container, BackgroundImg } from './styles';
+import { Container, BackgroundImg, Description, PageTitle } from './styles';
 
 const Classes: React.FC = () => {
+  const { goBack } = useNavigation();
+
+  function handleNavigateBack() {
+    goBack();
+  }
+
   return (
     <Container>
       <BackgroundImg resizeMode="contain" source={backgroundClassesPage}>
-        <Title fontFamily="Archivo" size="xlarge" bold>
+        <PageTitle fontFamily="Archivo" size="xlarge" bold>
           Quer ser um proffy?
-        </Title>
-        <Text fontFamily="Poppins" size="medium">
+        </PageTitle>
+        <Description fontFamily="Poppins" size="medium" color="light">
           Para começar, você precisa se cadastrar como professor na nossa
           plataforma web
-        </Text>
+        </Description>
       </BackgroundImg>
 
-      <Button variants="secundary" size="small" align="center">
+      <Button
+        onPress={() => handleNavigateBack()}
+        variants="secundary"
+        size="small"
+        align="center"
+      >
         ok
       </Button>
     </Container>

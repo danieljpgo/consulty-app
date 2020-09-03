@@ -37,8 +37,6 @@ const colors = {
 };
 
 const Text = styled.Text<TextProps>`
-  color: ${(props) => props.theme.colors.text.light};
-
   ${(props) => colors[props.color]};
   ${(props) => fontFamily[props.fontFamily]};
   ${(props) => size[props.size]};

@@ -8,7 +8,6 @@ import heartIcon from '../../common/assets/images/icons/heart.png';
 import heroImg from '../../common/assets/images/landing.png';
 import studyIcon from '../../common/assets/images/icons/study.png';
 import giveClassesIcon from '../../common/assets/images/icons/give-classes.png';
-import Text from '../../common/components/Text';
 
 import {
   Container,
@@ -40,7 +39,12 @@ const Landing: React.FC = () => {
 
         <ActionsContainer>
           <ButtonContainer>
-            <Button size="large" variants="primary" source={studyIcon}>
+            <Button
+              size="large"
+              variants="primary"
+              source={studyIcon}
+              onPress={() => handleNavigatePage('Tabs')}
+            >
               Estudar
             </Button>
           </ButtonContainer>
@@ -57,12 +61,9 @@ const Landing: React.FC = () => {
           </ButtonContainer>
         </ActionsContainer>
 
-        <Connetions>
+        <Connetions fontFamily="Poppins" size="small" color="light">
           Total de 385 conexões já realizadas <Image source={heartIcon} />
         </Connetions>
-        <Text fontFamily="Poppins" size="small" color="light">
-          Total de 385 conexões já realizadas <Image source={heartIcon} />
-        </Text>
       </Content>
     </Container>
   );
