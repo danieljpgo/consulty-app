@@ -3,6 +3,7 @@ import styled, { css } from 'styled-components/native';
 interface TextProps {
   fontFamily: 'Poppins' | 'Archivo';
   size: 'large' | 'medium' | 'small';
+  color: 'light' | 'base';
 }
 
 const fontFamily = {
@@ -26,8 +27,19 @@ const size = {
   `,
 };
 
+const colors = {
+  light: css`
+    color: ${(props) => props.theme.colors.text.light};
+  `,
+  base: css`
+    color: ${(props) => props.theme.colors.text.base};
+  `,
+};
+
 const Text = styled.Text<TextProps>`
   color: ${(props) => props.theme.colors.text.light};
+
+  ${(props) => colors[props.color]};
   ${(props) => fontFamily[props.fontFamily]};
   ${(props) => size[props.size]};
 `;

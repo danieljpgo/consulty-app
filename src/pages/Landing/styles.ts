@@ -3,6 +3,8 @@ import { Dimensions } from 'react-native';
 
 const screenWidth = Dimensions.get('window').width;
 
+import Text from '../../common/components/Text';
+
 export const Container = styled.View`
   background-color: ${(props) => props.theme.colors.primary.main};
   flex: 1;
@@ -30,10 +32,7 @@ export const ButtonContainer = styled.View`
   width: ${(props) => screenWidth / 2 - props.theme.unit * 2.5}px;
 `;
 
-export const Connetions = styled.Text`
-  font-family: 'Poppins_400Regular';
-  font-size: ${(props) => props.theme.fontSize.small}px;
-  color: ${(props) => props.theme.colors.title.base};
+export const Connetions = styled(Text)`
   max-width: ${(props) => screenWidth / 2 - props.theme.unit * 3}px;
   margin-top: ${(props) => props.theme.unit * 2}px;
 `;
