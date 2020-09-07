@@ -5,7 +5,7 @@ import { Image } from 'react-native';
 import backIcon from '../../assets/images/icons/back.png';
 import logoImg from '../../assets/images/logo.png';
 
-import { Container, Navbar, BackButton } from './styles';
+import { Container, Navbar, BackButton, Title } from './styles';
 
 const Header: React.FC = () => {
   const { goBack } = useNavigation();
@@ -23,6 +23,10 @@ const Header: React.FC = () => {
 
         <Image source={logoImg} resizeMode="contain" />
       </Navbar>
+
+      <Title fontFamily="Archivo" size="large" bold>
+        Proffys disponíveis
+      </Title>
     </Container>
   );
 };
