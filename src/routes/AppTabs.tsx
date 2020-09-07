@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ThemeContext } from 'styled-components';
+import { Ionicons } from '@expo/vector-icons';
 
 import Favorites from '../pages/Favorites';
 import Teachers from '../pages/Teachers';
@@ -39,8 +40,26 @@ const AppTabs: React.FC = () => {
         activeTintColor: themeContext.colors.title.main,
       }}
     >
-      <Screen name="Favorites" component={Favorites} />
-      <Screen name="Teachers" component={Teachers} />
+      <Screen
+        name="Favorites"
+        component={Favorites}
+        options={{
+          tabBarLabel: 'Proffys',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ios-easel" size={size} color={color} />
+          ),
+        }}
+      />
+      <Screen
+        name="Teachers"
+        component={Teachers}
+        options={{
+          tabBarLabel: 'Favoritos',
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="ios-heart" size={size} color={color} />
+          ),
+        }}
+      />
     </Navigator>
   );
 };
