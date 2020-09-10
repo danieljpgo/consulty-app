@@ -19,5 +19,7 @@ export const Navbar = styled.View`
 export const BackButton = styled(BorderlessButton)``;
 
 export const Title = styled(TitleComp)`
-  padding: ${(props) => props.theme.unit * 4}px 0;
+  padding: ${(props) => props.theme.unit * 3}px 0
+    ${(props) => props.theme.unit * 6}px 0;
+  max-width: 70%;
 `;

@@ -45,8 +45,12 @@ const AppTabs: React.FC = () => {
         component={Favorites}
         options={{
           tabBarLabel: 'Proffys',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-easel" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name="ios-easel"
+              size={size}
+              color={focused ? themeContext.colors.primary.main : color}
+            />
           ),
         }}
       />
@@ -55,8 +59,12 @@ const AppTabs: React.FC = () => {
         component={Teachers}
         options={{
           tabBarLabel: 'Favoritos',
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="ios-heart" size={size} color={color} />
+          tabBarIcon: ({ color, size, focused }) => (
+            <Ionicons
+              name="ios-heart"
+              size={size}
+              color={focused ? themeContext.colors.primary.main : color}
+            />
           ),
         }}
       />

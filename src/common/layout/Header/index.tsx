@@ -7,11 +7,17 @@ import logoImg from '../../assets/images/logo.png';
 
 import { Container, Navbar, BackButton, Title } from './styles';
 
-const Header: React.FC = () => {
-  const { goBack } = useNavigation();
+interface Props {
+  title: string;
+}
+
+const Header: React.FC<Props> = (props) => {
+  const { title } = props;
+
+  const { navigate } = useNavigation();
 
   function handleNavigateBack() {
-    goBack();
+    navigate('Landing');
   }
 
   return (
@@ -24,8 +30,8 @@ const Header: React.FC = () => {
         <Image source={logoImg} resizeMode="contain" />
       </Navbar>
 
-      <Title fontFamily="Archivo" size="large" bold>
-        Proffys disponíveis
+      <Title fontFamily="Archivo" size="xlarge" bold>
+        {title}
       </Title>
     </Container>
   );

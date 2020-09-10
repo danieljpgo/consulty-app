@@ -8,7 +8,7 @@ import { Container } from './styles';
 const Teachers: React.FC = () => {
   return (
     <Container>
-      <Header />
+      <Header title="Proffys disponíveis" />
       <Card />
     </Container>
   );
