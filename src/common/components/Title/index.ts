@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components/native';
 
 interface TitleProps {
   bold?: boolean;
+  color: 'constrast' | 'base';
   size: 'xlarge' | 'large';
   fontFamily: 'Poppins' | 'Archivo';
 }
@@ -27,8 +28,17 @@ const sizes = {
   `,
 };
 
+const colors = {
+  constrast: css`
+    color: ${(props) => props.theme.colors.text.constrast};
+  `,
+  base: css`
+    color: ${(props) => props.theme.colors.title.main};
+  `,
+};
+
 const Title = styled.Text<TitleProps>`
-  color: ${(props) => props.theme.colors.text.constrast};
+  ${(props) => colors[props.color]}
   ${(props) => sizes[props.size]};
   ${(props) => fontFamily(props.fontFamily, props.bold)};
 `;

@@ -30,10 +30,10 @@ const Landing: React.FC = () => {
       <Hero source={heroImg} style={{ resizeMode: 'contain' }} />
 
       <Content>
-        <Title fontFamily="Poppins" size="large">
+        <Title color="constrast" fontFamily="Poppins" size="large">
           Seja bem-vindo
         </Title>
-        <Title fontFamily="Poppins" size="large" bold>
+        <Title color="constrast" fontFamily="Poppins" size="large" bold>
           O que deseja fazer?
         </Title>
 

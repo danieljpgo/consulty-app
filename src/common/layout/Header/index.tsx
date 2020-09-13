@@ -30,7 +30,7 @@ const Header: React.FC<Props> = (props) => {
         <Image source={logoImg} resizeMode="contain" />
       </Navbar>
 
-      <Title fontFamily="Archivo" size="xlarge" bold>
+      <Title color="constrast" fontFamily="Archivo" size="xlarge" bold>
         {title}
       </Title>
     </Container>

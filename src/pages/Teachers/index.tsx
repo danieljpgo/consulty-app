@@ -3,13 +3,15 @@ import React from 'react';
 import Card from '../../common/components/Card';
 import Header from '../../common/layout/Header';
 
-import { Container } from './styles';
+import { Container, Content } from './styles';
 
 const Teachers: React.FC = () => {
   return (
     <Container>
       <Header title="Proffys disponíveis" />
-      <Card />
+      <Content>
+        <Card />
+      </Content>
     </Container>
   );
 };
