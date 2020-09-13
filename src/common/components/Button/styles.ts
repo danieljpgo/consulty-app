@@ -5,6 +5,11 @@ interface ButtonProps {
   variants: 'primary' | 'secundary';
   size: 'large' | 'small';
   align?: 'center';
+  flexDirection?: 'row';
+}
+
+interface ImageProps {
+  spacing: boolean;
 }
 
 const variants = {
@@ -34,6 +39,12 @@ const align = {
   `,
 };
 
+const flexDirection = {
+  row: css`
+    flex-direction: row;
+  `,
+};
+
 // eslint-disable-next-line prettier/prettier
 export const Container = styled(RectButton) <ButtonProps>`
   justify-content: space-between;
@@ -42,6 +53,7 @@ export const Container = styled(RectButton) <ButtonProps>`
   ${(props) => size[props.size]};
   ${(props) => variants[props.variants]};
   ${(props) => props.align && align[props.align]};
+  ${(props) => props.flexDirection && flexDirection[props.flexDirection]};
 `;
 
 export const Text = styled.Text`
@@ -50,4 +62,10 @@ export const Text = styled.Text`
   color: ${(props) => props.theme.colors.text.constrast};
 `;
 
-export const Image = styled.Image``;
+export const Image = styled.Image<ImageProps>`
+  ${(props) =>
+    props.spacing &&
+    css`
+      margin-right: ${props.theme.unit}px;
+    `}
+`;

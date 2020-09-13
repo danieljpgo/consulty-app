@@ -16,7 +16,7 @@ const Classes: React.FC = () => {
   return (
     <Container>
       <BackgroundImg resizeMode="contain" source={backgroundClassesPage}>
-        <PageTitle fontFamily="Archivo" size="xlarge" bold>
+        <PageTitle fontFamily="Archivo" size="xlarge" color="constrast" bold>
           Quer ser um proffy?
         </PageTitle>
         <Description fontFamily="Poppins" size="medium" color="light">

@@ -7,18 +7,33 @@ interface Props {
   variants: 'primary' | 'secundary';
   size: 'large' | 'small';
   align?: 'center';
+  flexDirection?: 'row';
   source?: ImageSourcePropType;
-  children: string;
+  children?: string;
   onPress?: (pointerInside: boolean) => void;
 }
 
 const Button: React.FC<Props> = (props) => {
-  const { variants, children, source, align, size, onPress } = props;
+  const {
+    variants,
+    children,
+    source,
+    align,
+    size,
+    flexDirection,
+    onPress,
+  } = props;
 
   return (
-    <Container variants={variants} onPress={onPress} align={align} size={size}>
-      {source && <Image source={source} />}
-      <Text>{children}</Text>
+    <Container
+      variants={variants}
+      onPress={onPress}
+      align={align}
+      size={size}
+      flexDirection={flexDirection}
+    >
+      {source && <Image spacing={!!flexDirection} source={source} />}
+      {children && <Text>{children}</Text>}
     </Container>
   );
 };

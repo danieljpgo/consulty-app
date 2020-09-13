@@ -42,6 +42,7 @@ export const Price = styled.View`
 
 export const Actions = styled.View`
   flex-direction: row;
+  width: 100%;
 `;
 
 /* border-top: solid 1px ${(props) => props.theme.colors.lines.constrast}; */

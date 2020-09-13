@@ -3,6 +3,8 @@ import React from 'react';
 import Text from '../Text';
 import Title from '../Title';
 import Button from '../Button';
+import heartIcon from '../../assets/images/icons/heart-outline.png';
+import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 
 import {
   Container,
@@ -50,10 +52,19 @@ const Card: React.FC = () => {
           </Text>
         </Price>
         <Actions>
-          <Button size="small" variants="primary">
-            C
-          </Button>
-          <Button size="small" variants="secundary">
+          <Button
+            size="small"
+            align="center"
+            variants="primary"
+            source={heartIcon}
+          />
+          <Button
+            size="small"
+            align="center"
+            flexDirection="row"
+            variants="secundary"
+            source={whatsappIcon}
+          >
             Entrar em contato
           </Button>
         </Actions>
