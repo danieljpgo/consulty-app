@@ -3,16 +3,20 @@ import styled, { css } from 'styled-components/native';
 interface TextProps {
   fontFamily: 'Poppins' | 'Archivo';
   size: 'large' | 'medium' | 'small';
-  color: 'light' | 'base';
+  color: 'light' | 'base' | 'primary';
+  bold?: boolean;
 }
 
-const fontFamily = {
-  Poppins: css`
-    font-family: 'Poppins_400Regular';
-  `,
-  Archivo: css`
-    font-family: 'Archivo_400Regular';
-  `,
+const fontFamily = (key: 'Poppins' | 'Archivo', bold?: boolean) => {
+  const fonts = {
+    Poppins: css`
+      font-family: ${bold ? 'Poppins_600SemiBold' : 'Poppins_400Regular'};
+    `,
+    Archivo: css`
+      font-family: ${bold ? 'Archivo_700Bold' : 'Archivo_400Regular'};
+    `,
+  };
+  return fonts[key];
 };
 
 const size = {
@@ -34,11 +38,14 @@ const colors = {
   base: css`
     color: ${(props) => props.theme.colors.text.base};
   `,
+  primary: css`
+    color: ${(props) => props.theme.colors.primary.main};
+  `,
 };
 
 const Text = styled.Text<TextProps>`
   ${(props) => colors[props.color]};
-  ${(props) => fontFamily[props.fontFamily]};
+  ${(props) => fontFamily(props.fontFamily, props.bold)};
   ${(props) => size[props.size]};
 `;
 

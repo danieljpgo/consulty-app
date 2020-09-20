@@ -15,6 +15,7 @@ import {
   Profile,
   Price,
   Actions,
+  Spacing,
 } from './styles';
 
 const Card: React.FC = () => {
@@ -47,7 +48,8 @@ const Card: React.FC = () => {
           <Text color="base" size="medium" fontFamily="Poppins">
             Preço/hora
           </Text>
-          <Text color="base" size="medium" fontFamily="Poppins">
+          <Spacing width={0.5} />
+          <Text color="primary" size="medium" fontFamily="Poppins" bold>
             R$ 20,00
           </Text>
         </Price>
@@ -58,7 +60,9 @@ const Card: React.FC = () => {
             variants="primary"
             source={heartIcon}
           />
+          <Spacing width={1} />
           <Button
+            flex={1}
             size="small"
             align="center"
             flexDirection="row"

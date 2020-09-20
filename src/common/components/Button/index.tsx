@@ -7,9 +7,10 @@ interface Props {
   variants: 'primary' | 'secundary';
   size: 'large' | 'small';
   align?: 'center';
-  flexDirection?: 'row';
   source?: ImageSourcePropType;
   children?: string;
+  flexDirection?: 'row';
+  flex?: number;
   onPress?: (pointerInside: boolean) => void;
 }
 
@@ -20,6 +21,7 @@ const Button: React.FC<Props> = (props) => {
     source,
     align,
     size,
+    flex,
     flexDirection,
     onPress,
   } = props;
@@ -30,6 +32,7 @@ const Button: React.FC<Props> = (props) => {
       onPress={onPress}
       align={align}
       size={size}
+      flex={flex}
       flexDirection={flexDirection}
     >
       {source && <Image spacing={!!flexDirection} source={source} />}

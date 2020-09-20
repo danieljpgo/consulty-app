@@ -11,6 +11,10 @@ const Teachers: React.FC = () => {
       <Header title="Proffys disponíveis" />
       <Content>
         <Card />
+        <Card />
+        <Card />
+        <Card />
+        <Card />
       </Content>
     </Container>
   );

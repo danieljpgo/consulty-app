@@ -1,9 +1,11 @@
-import styled from 'styled-components/native';
+import styled, { css } from 'styled-components/native';
 
 export const Container = styled.View`
-  /* border-radius: ${(props) => props.theme.shapes.borderRadius}px; */
+  border-radius: ${(props) => props.theme.shapes.borderRadius}px;
   border-color: ${(props) => props.theme.colors.lines.constrast};
   border-width: 1px;
+  overflow: hidden;
+  margin-bottom: ${(props) => props.theme.unit}px;
 `;
 
 export const Content = styled.View`
@@ -45,4 +47,14 @@ export const Actions = styled.View`
   width: 100%;
 `;
 
-/* border-top: solid 1px ${(props) => props.theme.colors.lines.constrast}; */
+interface Spacing {
+  width?: number;
+}
+
+export const Spacing = styled.View<Spacing>`
+  ${(props) =>
+    props.width &&
+    css`
+      width: ${props.theme.unit * props.width}px;
+    `};
+`;

@@ -5,6 +5,7 @@ interface ButtonProps {
   variants: 'primary' | 'secundary';
   size: 'large' | 'small';
   align?: 'center';
+  flex?: number;
   flexDirection?: 'row';
 }
 
@@ -49,7 +50,11 @@ const flexDirection = {
 export const Container = styled(RectButton) <ButtonProps>`
   justify-content: space-between;
   border-radius: ${(props) => props.theme.shapes.borderRadius}px;
-
+  ${(props) =>
+    props.flex &&
+    css`
+      flex: ${props.flex};
+    `};
   ${(props) => size[props.size]};
   ${(props) => variants[props.variants]};
   ${(props) => props.align && align[props.align]};

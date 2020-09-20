@@ -41,8 +41,8 @@ const AppTabs: React.FC = () => {
       }}
     >
       <Screen
-        name="Favorites"
-        component={Favorites}
+        name="Teachers"
+        component={Teachers}
         options={{
           tabBarLabel: 'Proffys',
           tabBarIcon: ({ color, size, focused }) => (
@@ -55,8 +55,8 @@ const AppTabs: React.FC = () => {
         }}
       />
       <Screen
-        name="Teachers"
-        component={Teachers}
+        name="Favorites"
+        component={Favorites}
         options={{
           tabBarLabel: 'Favoritos',
           tabBarIcon: ({ color, size, focused }) => (
