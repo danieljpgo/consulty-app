@@ -4,7 +4,7 @@ import { ImageSourcePropType } from 'react-native';
 import { Container, Image, Text } from './styles';
 
 interface Props {
-  variants: 'primary' | 'secundary';
+  variants: 'primary' | 'secundary' | 'error';
   size: 'large' | 'small';
   align?: 'center';
   source?: ImageSourcePropType;

@@ -13,6 +13,7 @@ export const Container = styled.View`
 export const BackgroundImg = styled.ImageBackground`
   flex: 1;
   justify-content: center;
+  margin-bottom: ${(props) => props.theme.unit * 2}px;
 `;
 
 export const PageTitle = styled(Title)`

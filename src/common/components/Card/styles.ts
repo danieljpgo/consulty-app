@@ -10,7 +10,9 @@ export const Container = styled.View`
 
 export const Content = styled.View`
   background-color: ${(props) => props.theme.colors.surface.base};
-  padding: ${(props) => props.theme.unit}px;
+  padding: ${(props) => props.theme.unit * 1.5}px
+    ${(props) => props.theme.unit * 1.5}px ${(props) => props.theme.unit}px
+    ${(props) => props.theme.unit * 1.5}px;
 `;
 
 export const Header = styled.View`
@@ -32,8 +34,13 @@ export const Profile = styled.View`
 `;
 
 export const Footer = styled.View`
+  border-color: ${(props) => props.theme.colors.lines.constrast};
+  border-top-width: 1px;
   background-color: ${(props) => props.theme.colors.surface.constrast};
-  padding: ${(props) => props.theme.unit}px;
+  padding: ${(props) => props.theme.unit}px
+    ${(props) => props.theme.unit * 1.5}px
+    ${(props) => props.theme.unit * 1.5}px
+    ${(props) => props.theme.unit * 1.5}px;
 `;
 
 export const Price = styled.View`

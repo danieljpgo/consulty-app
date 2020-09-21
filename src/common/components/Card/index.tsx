@@ -4,6 +4,7 @@ import Text from '../Text';
 import Title from '../Title';
 import Button from '../Button';
 import heartIcon from '../../assets/images/icons/heart-outline.png';
+import unfavorite from '../../assets/images/icons/unfavorite.png';
 import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 
 import {
@@ -18,7 +19,13 @@ import {
   Spacing,
 } from './styles';
 
-const Card: React.FC = () => {
+interface Props {
+  liked?: boolean;
+}
+
+const Card: React.FC<Props> = (props) => {
+  const { liked } = props;
+
   return (
     <Container>
       <Content>
@@ -57,8 +64,8 @@ const Card: React.FC = () => {
           <Button
             size="small"
             align="center"
-            variants="primary"
-            source={heartIcon}
+            variants={liked ? 'error' : 'primary'}
+            source={liked ? unfavorite : heartIcon}
           />
           <Spacing width={1} />
           <Button

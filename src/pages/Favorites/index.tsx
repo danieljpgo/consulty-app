@@ -10,6 +10,10 @@ const Favorites: React.FC = () => {
     <Container>
       <Header title="Meus proffys favoritos" />
       <Content>
+        <Card liked />
+        <Card />
+        <Card />
+        <Card />
         <Card />
       </Content>
     </Container>

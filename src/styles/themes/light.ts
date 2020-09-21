@@ -28,7 +28,7 @@ const theme = {
       main: colors.green['500'],
       dark: colors.green['700'],
     },
-    warning: colors.red['300'],
+    warning: colors.red['500'],
     text: {
       light: colors.purple['100'],
       base: colors.purple['200'],

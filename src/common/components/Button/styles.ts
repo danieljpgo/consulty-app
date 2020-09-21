@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
 interface ButtonProps {
-  variants: 'primary' | 'secundary';
+  variants: 'primary' | 'secundary' | 'error';
   size: 'large' | 'small';
   align?: 'center';
   flex?: number;
@@ -19,6 +19,9 @@ const variants = {
   `,
   secundary: css`
     background-color: ${(props) => props.theme.colors.secundary.main};
+  `,
+  error: css`
+    background-color: ${(props) => props.theme.colors.warning};
   `,
 };
 
