@@ -1,4 +1,4 @@
-import styled, { css } from 'styled-components/native';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   border-radius: ${(props) => props.theme.shapes.borderRadius}px;
@@ -52,16 +52,4 @@ export const Price = styled.View`
 export const Actions = styled.View`
   flex-direction: row;
   width: 100%;
-`;
-
-interface Spacing {
-  width?: number;
-}
-
-export const Spacing = styled.View<Spacing>`
-  ${(props) =>
-    props.width &&
-    css`
-      width: ${props.theme.unit * props.width}px;
-    `};
 `;

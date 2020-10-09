@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components/native';
 import { RectButton } from 'react-native-gesture-handler';
 
-interface ButtonProps {
+interface Button {
   variants: 'primary' | 'secundary' | 'error';
   size: 'large' | 'small';
   align?: 'center';
@@ -9,7 +9,7 @@ interface ButtonProps {
   flexDirection?: 'row';
 }
 
-interface ImageProps {
+interface Image {
   spacing: boolean;
 }
 
@@ -50,7 +50,7 @@ const flexDirection = {
 };
 
 // eslint-disable-next-line prettier/prettier
-export const Container = styled(RectButton) <ButtonProps>`
+export const Container = styled(RectButton) <Button>`
   justify-content: space-between;
   border-radius: ${(props) => props.theme.shapes.borderRadius}px;
   ${(props) =>
@@ -70,7 +70,7 @@ export const Text = styled.Text`
   color: ${(props) => props.theme.colors.text.constrast};
 `;
 
-export const Image = styled.Image<ImageProps>`
+export const Image = styled.Image<Image>`
   ${(props) =>
     props.spacing &&
     css`

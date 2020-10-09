@@ -12,7 +12,7 @@ interface Props {
 }
 
 const Header: React.FC<Props> = (props) => {
-  const { title } = props;
+  const { title, children } = props;
 
   const { navigate } = useNavigation();
 
@@ -33,6 +33,7 @@ const Header: React.FC<Props> = (props) => {
       <Title color="constrast" fontFamily="Archivo" size="xlarge" bold>
         {title}
       </Title>
+      {children}
     </Container>
   );
 };

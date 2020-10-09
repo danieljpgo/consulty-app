@@ -5,6 +5,7 @@ const colors = {
     200: '#E6E6F0',
     300: '#F0F0F7',
     400: '#F8F8FC',
+    500: '#c1bccc',
     700: '#9C98A6',
   },
   purple: {

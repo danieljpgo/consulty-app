@@ -6,7 +6,7 @@ import TitleComp from '../../components/Title';
 export const Container = styled.View`
   background-color: ${(props) => props.theme.colors.primary.main};
   padding: ${(props) => props.theme.unit * 3}px
-    ${(props) => props.theme.unit * 2}px ${(props) => props.theme.unit}px
+    ${(props) => props.theme.unit * 2}px ${(props) => props.theme.unit * 8}px
     ${(props) => props.theme.unit * 2}px;
 `;
 
@@ -20,6 +20,6 @@ export const BackButton = styled(BorderlessButton)``;
 
 export const Title = styled(TitleComp)`
   padding: ${(props) => props.theme.unit * 2}px 0
-    ${(props) => props.theme.unit * 6}px 0;
+    ${(props) => props.theme.unit * 2}px 0;
   max-width: 70%;
 `;

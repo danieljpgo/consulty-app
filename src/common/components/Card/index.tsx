@@ -6,6 +6,7 @@ import Button from '../Button';
 import heartIcon from '../../assets/images/icons/heart-outline.png';
 import unfavorite from '../../assets/images/icons/unfavorite.png';
 import whatsappIcon from '../../assets/images/icons/whatsapp.png';
+import { Spacing } from '../Spacing';
 
 import {
   Container,
@@ -16,7 +17,6 @@ import {
   Profile,
   Price,
   Actions,
-  Spacing,
 } from './styles';
 
 interface Props {
