@@ -28,10 +28,6 @@ export const ActionsContainer = styled.View`
   margin-top: ${(props) => props.theme.unit * 2}px;
 `;
 
-export const ButtonContainer = styled.View`
-  width: ${(props) => screenWidth / 2 - props.theme.unit * 2.5}px;
-`;
-
 export const Connetions = styled(Text)`
   max-width: ${(props) => screenWidth / 2 - props.theme.unit * 3}px;
   margin-top: ${(props) => props.theme.unit * 2}px;

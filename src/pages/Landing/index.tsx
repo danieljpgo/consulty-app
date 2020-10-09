@@ -8,11 +8,11 @@ import heartIcon from '../../common/assets/images/icons/heart.png';
 import heroImg from '../../common/assets/images/landing.png';
 import studyIcon from '../../common/assets/images/icons/study.png';
 import giveClassesIcon from '../../common/assets/images/icons/give-classes.png';
+import { Spacing } from '../../common/components/Spacing';
 
 import {
   Container,
   Hero,
-  ButtonContainer,
   ActionsContainer,
   Connetions,
   Content,
@@ -38,27 +38,25 @@ const Landing: React.FC = () => {
         </Title>
 
         <ActionsContainer>
-          <ButtonContainer>
-            <Button
-              size="large"
-              variants="primary"
-              source={studyIcon}
-              onPress={() => handleNavigatePage('Tabs')}
-            >
-              Estudar
-            </Button>
-          </ButtonContainer>
-
-          <ButtonContainer>
-            <Button
-              size="large"
-              variants="secundary"
-              source={giveClassesIcon}
-              onPress={() => handleNavigatePage('Classes')}
-            >
-              Dar Aulas
-            </Button>
-          </ButtonContainer>
+          <Button
+            flex={1}
+            size="large"
+            variants="primary"
+            source={studyIcon}
+            onPress={() => handleNavigatePage('Tabs')}
+          >
+            Estudar
+          </Button>
+          <Spacing width={1} />
+          <Button
+            flex={1}
+            size="large"
+            variants="secundary"
+            source={giveClassesIcon}
+            onPress={() => handleNavigatePage('Classes')}
+          >
+            Dar Aulas
+          </Button>
         </ActionsContainer>
 
         <Connetions fontFamily="Poppins" size="small" color="light">
