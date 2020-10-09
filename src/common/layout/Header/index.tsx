@@ -5,14 +5,15 @@ import { Image } from 'react-native';
 import backIcon from '../../assets/images/icons/back.png';
 import logoImg from '../../assets/images/logo.png';
 
-import { Container, Navbar, BackButton, Title } from './styles';
+import { Container, Navbar, BackButton, Title, Content } from './styles';
 
 interface Props {
   title: string;
+  action: React.ReactNode;
 }
 
 const Header: React.FC<Props> = (props) => {
-  const { title, children } = props;
+  const { title, children, action } = props;
 
   const { navigate } = useNavigation();
 
@@ -30,9 +31,13 @@ const Header: React.FC<Props> = (props) => {
         <Image source={logoImg} resizeMode="contain" />
       </Navbar>
 
-      <Title color="constrast" fontFamily="Archivo" size="xlarge" bold>
-        {title}
-      </Title>
+      <Content>
+        <Title color="constrast" fontFamily="Archivo" size="xlarge" bold>
+          {title}
+        </Title>
+        {action}
+      </Content>
+
       {children}
     </Container>
   );
