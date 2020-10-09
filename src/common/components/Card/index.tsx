@@ -48,6 +48,10 @@ const Card: React.FC<Props> = (props) => {
         <Text color="base" size="medium" fontFamily="Poppins">
           As vezes não sei nem onde eu tô, mas consigo me localizar facilmente
           em qualquer lugar. Tenho memória fotográfica e nunca fico perdido.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aut
+          consequatur quia repudiandae praesentium totam corrupti, a ratione,
+          reprehenderit rem tempora ipsam perferendis officia soluta, ipsa eius
+          nostrum reiciendis dignissimos?
         </Text>
       </Content>
       <Footer>

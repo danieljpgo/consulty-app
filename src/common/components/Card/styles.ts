@@ -5,7 +5,7 @@ export const Container = styled.View`
   border-color: ${(props) => props.theme.colors.lines.constrast};
   border-width: 1px;
   overflow: hidden;
-  margin-bottom: ${(props) => props.theme.unit}px;
+  margin-bottom: ${(props) => props.theme.unit * 1.5}px;
 `;
 
 export const Content = styled.View`
@@ -45,7 +45,7 @@ export const Footer = styled.View`
 
 export const Price = styled.View`
   justify-content: center;
-  padding-bottom: ${(props) => props.theme.unit}px;
+  padding-bottom: ${(props) => props.theme.unit * 0.75}px;
   flex-direction: row;
 `;
 
