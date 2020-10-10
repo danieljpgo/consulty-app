@@ -3,7 +3,7 @@ import { RectButton } from 'react-native-gesture-handler';
 
 interface Button {
   variants: 'primary' | 'secundary' | 'error';
-  size: 'large' | 'small';
+  size: 'large' | 'small' | 'xsmall';
   align?: 'center';
   flex?: number;
   flexDirection?: 'row';
@@ -32,6 +32,10 @@ const size = {
   `,
   small: css`
     height: ${(props) => props.theme.unit * 4}px;
+    padding: ${(props) => props.theme.unit * 1}px;
+  `,
+  xsmall: css`
+    height: ${(props) => props.theme.unit * 3.05}px;
     padding: ${(props) => props.theme.unit * 1}px;
   `,
 };

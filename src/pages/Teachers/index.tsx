@@ -16,6 +16,11 @@ const Teachers: React.FC = () => {
     setIsFilterVisible((prev) => !prev);
   }
 
+  function handleSubmit() {
+    console.log('ai papai');
+    setIsFilterVisible(false);
+  }
+
   return (
     <Container>
       <Header
@@ -30,7 +35,7 @@ const Teachers: React.FC = () => {
           </BorderlessButton>
         }
       >
-        {isFilterVisible && <Filter />}
+        {isFilterVisible && <Filter onSubmit={() => handleSubmit()} />}
       </Header>
       <Content>
         <Card />

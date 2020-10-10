@@ -5,7 +5,7 @@ import { Container, Image, Text } from './styles';
 
 interface Props {
   variants: 'primary' | 'secundary' | 'error';
-  size: 'large' | 'small';
+  size: 'large' | 'small' | 'xsmall';
   align?: 'center';
   source?: ImageSourcePropType;
   children?: string;

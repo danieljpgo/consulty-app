@@ -1,14 +1,22 @@
 import React from 'react';
+import { Feather } from '@expo/vector-icons';
 
 import TextInputField from '../../../common/components/TextInputField';
 import { Spacing } from '../../../common/components/Spacing';
+import Button from '../../../common/components/Button';
 
 import { Container, Wrapper } from './styles';
 
-interface Props { }
+interface Props {
+  onSubmit: () => void;
+}
 
 const Filter: React.FC<Props> = (props) => {
-  const { } = props;
+  const { onSubmit } = props;
+
+  function handleSubmit() {
+    onSubmit();
+  }
 
   return (
     <Container>
@@ -17,10 +25,20 @@ const Filter: React.FC<Props> = (props) => {
         <TextInputField
           flex={4}
           label="Dia da semana"
-          placeholder="Qual o dia desejado?"
+          placeholder="Dia desejado?"
         />
         <Spacing width={1.5} />
-        <TextInputField label="Horário" flex={3} placeholder="Qual o horário" />
+        <TextInputField label="Horário" flex={3} placeholder="Horário" />
+        <Spacing width={1.5} />
+        <Button
+          size="xsmall"
+          variants="secundary"
+          align="center"
+          flex={0.5}
+          onPress={() => handleSubmit()}
+        >
+          x
+        </Button>
       </Wrapper>
     </Container>
   );
