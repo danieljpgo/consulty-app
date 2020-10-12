@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { BorderlessButton } from 'react-native-gesture-handler';
 import { Feather } from '@expo/vector-icons';
 
 import Card from '../../common/components/Card';
 import Header from '../../common/layout/Header';
 import light from '../../styles/themes/light';
 
-import { Container, Content } from './styles';
+import { Container, Content, FilterButton } from './styles';
 import Filter from './Filter';
 
 const Teachers: React.FC = () => {
@@ -17,7 +16,6 @@ const Teachers: React.FC = () => {
   }
 
   function handleSubmit() {
-    console.log('ai papai');
     setIsFilterVisible(false);
   }
 
@@ -26,13 +24,13 @@ const Teachers: React.FC = () => {
       <Header
         title="Proffys disponíveis"
         action={
-          <BorderlessButton onPress={() => handleToggleFilter()}>
+          <FilterButton onPress={() => handleToggleFilter()}>
             <Feather
               name="filter"
               size={25}
               color={light.colors.surface.base}
             />
-          </BorderlessButton>
+          </FilterButton>
         }
       >
         {isFilterVisible && <Filter onSubmit={() => handleSubmit()} />}

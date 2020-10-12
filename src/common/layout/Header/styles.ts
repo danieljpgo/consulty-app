@@ -5,7 +5,7 @@ import TitleComp from '../../components/Title';
 
 export const Container = styled.View`
   background-color: ${(props) => props.theme.colors.primary.main};
-  padding: ${(props) => props.theme.unit * 3}px
+  padding: ${(props) => props.theme.unit * 2.5}px
     ${(props) => props.theme.unit * 2}px ${(props) => props.theme.unit * 5.75}px
     ${(props) => props.theme.unit * 2}px;
 `;
@@ -16,7 +16,11 @@ export const Navbar = styled.View`
   align-items: center;
 `;
 
-export const BackButton = styled(BorderlessButton)``;
+export const BackButton = styled(BorderlessButton)`
+  padding: ${(props) => props.theme.unit / 2}px;
+  margin-left: -${(props) => props.theme.unit / 2}px;
+  margin-right: -${(props) => props.theme.unit / 2}px;
+`;
 
 export const Content = styled.View`
   justify-content: space-between;

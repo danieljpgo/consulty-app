@@ -9,7 +9,7 @@ import { Container, Navbar, BackButton, Title, Content } from './styles';
 
 interface Props {
   title: string;
-  action: React.ReactNode;
+  action?: React.ReactNode;
 }
 
 const Header: React.FC<Props> = (props) => {
@@ -28,7 +28,9 @@ const Header: React.FC<Props> = (props) => {
           <Image source={backIcon} resizeMode="contain" />
         </BackButton>
 
-        <Image source={logoImg} resizeMode="contain" />
+        <BackButton onPress={() => handleNavigateBack()}>
+          <Image source={logoImg} resizeMode="contain" />
+        </BackButton>
       </Navbar>
 
       <Content>

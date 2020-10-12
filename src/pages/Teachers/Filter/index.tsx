@@ -1,6 +1,6 @@
 import React from 'react';
-import { Feather } from '@expo/vector-icons';
 
+import searchIcon from '../../../common/assets/images/icons/search.png';
 import TextInputField from '../../../common/components/TextInputField';
 import { Spacing } from '../../../common/components/Spacing';
 import Button from '../../../common/components/Button';
@@ -35,10 +35,9 @@ const Filter: React.FC<Props> = (props) => {
           variants="secundary"
           align="center"
           flex={0.5}
+          source={searchIcon}
           onPress={() => handleSubmit()}
-        >
-          x
-        </Button>
+        />
       </Wrapper>
     </Container>
   );
