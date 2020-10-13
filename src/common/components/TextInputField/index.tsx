@@ -9,10 +9,12 @@ interface Props {
   label: string;
   placeholder: string;
   flex: number;
+  value?: string;
+  onChangeText?: (text: string) => void;
 }
 
 const TextInputField: React.FC<Props> = (props) => {
-  const { label, placeholder, flex } = props;
+  const { value, label, placeholder, flex, onChangeText } = props;
 
   return (
     <Container flex={flex}>
@@ -20,8 +22,10 @@ const TextInputField: React.FC<Props> = (props) => {
         {label}
       </Text>
       <TextInput
+        value={value}
         placeholder={placeholder}
         placeholderTextColor={light.colors.surface.placeholder}
+        onChangeText={(text) => onChangeText && onChangeText(text)}
       />
     </Container>
   );

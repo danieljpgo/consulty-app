@@ -1,4 +1,5 @@
 import React from 'react';
+import { Archivo_600SemiBold_Italic } from '@expo-google-fonts/archivo';
 
 import Text from '../Text';
 import Title from '../Title';
@@ -7,6 +8,7 @@ import heartIcon from '../../assets/images/icons/heart-outline.png';
 import unfavorite from '../../assets/images/icons/unfavorite.png';
 import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 import { Spacing } from '../Spacing';
+import { Teacher } from '../../../pages/Teachers/types';
 
 import {
   Container,
@@ -21,10 +23,12 @@ import {
 
 interface Props {
   liked?: boolean;
+  teacher: Teacher;
 }
 
 const Card: React.FC<Props> = (props) => {
-  const { liked } = props;
+  const { liked, teacher } = props;
+  const { avatar, bio, cost, name, subject, user_id, whatsapp } = teacher;
 
   return (
     <Container>
@@ -32,26 +36,20 @@ const Card: React.FC<Props> = (props) => {
         <Header>
           <Avatar
             source={{
-              uri:
-                'https://avatars0.githubusercontent.com/u/37938090?s=460&u=139da297b51ea25e70597485f65d346cc86ec2a5&v=4',
+              uri: avatar,
             }}
           />
           <Profile>
             <Title color="base" size="large" fontFamily="Archivo" bold>
-              Daniel Jorge
+              {name}
             </Title>
             <Text color="base" size="small" fontFamily="Poppins">
-              Xyz
+              {subject}
             </Text>
           </Profile>
         </Header>
         <Text color="base" size="medium" fontFamily="Poppins">
-          As vezes não sei nem onde eu tô, mas consigo me localizar facilmente
-          em qualquer lugar. Tenho memória fotográfica e nunca fico perdido.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam aut
-          consequatur quia repudiandae praesentium totam corrupti, a ratione,
-          reprehenderit rem tempora ipsam perferendis officia soluta, ipsa eius
-          nostrum reiciendis dignissimos?
+          {bio}
         </Text>
       </Content>
       <Footer>
@@ -61,7 +59,7 @@ const Card: React.FC<Props> = (props) => {
           </Text>
           <Spacing width={0.5} />
           <Text color="primary" size="medium" fontFamily="Poppins" bold>
-            R$ 20,00
+            R$ {cost}
           </Text>
         </Price>
         <Actions>

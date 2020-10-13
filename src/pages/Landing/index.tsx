@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
@@ -9,6 +9,7 @@ import heroImg from '../../common/assets/images/landing.png';
 import studyIcon from '../../common/assets/images/icons/study.png';
 import giveClassesIcon from '../../common/assets/images/icons/give-classes.png';
 import { Spacing } from '../../common/components/Spacing';
+import api from '../../common/services/api';
 
 import {
   Container,
@@ -19,11 +20,25 @@ import {
 } from './styles';
 
 const Landing: React.FC = () => {
+  const [totalConnection, setTotalConnection] = useState(0);
   const navigation = useNavigation();
+
+  useEffect(() => {
+    const getTotalConnection = async () => {
+      const { total } = await api
+        .get<{ total: number }>('connections/count')
+        .then((response) => response.data);
+      setTotalConnection(total);
+    };
+
+    getTotalConnection();
+  }, []);
 
   function handleNavigatePage(router: string) {
     navigation.navigate(router);
   }
+
+  const labelConnection = `Total de ${totalConnection} conexões já realizadas`;
 
   return (
     <Container>
@@ -60,7 +75,8 @@ const Landing: React.FC = () => {
         </ActionsContainer>
 
         <Connetions fontFamily="Poppins" size="small" color="light">
-          Total de 385 conexões já realizadas <Image source={heartIcon} />
+          {labelConnection}
+          <Image source={heartIcon} />
         </Connetions>
       </Content>
     </Container>
