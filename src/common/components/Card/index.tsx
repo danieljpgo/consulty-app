@@ -1,5 +1,5 @@
 import React from 'react';
-import { Archivo_600SemiBold_Italic } from '@expo-google-fonts/archivo';
+import { Linking } from 'react-native';
 
 import Text from '../Text';
 import Title from '../Title';
@@ -29,6 +29,10 @@ interface Props {
 const Card: React.FC<Props> = (props) => {
   const { liked, teacher } = props;
   const { avatar, bio, cost, name, subject, user_id, whatsapp } = teacher;
+
+  function handleLinkToWhatsapp(whatsappNumber: string) {
+    Linking.openURL(`whatsapp://send?phone=${whatsappNumber}`);
+  }
 
   return (
     <Container>
@@ -77,6 +81,7 @@ const Card: React.FC<Props> = (props) => {
             flexDirection="row"
             variants="secundary"
             source={whatsappIcon}
+            onPress={() => handleLinkToWhatsapp(whatsapp)}
           >
             Entrar em contato
           </Button>
