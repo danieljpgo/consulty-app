@@ -5,6 +5,7 @@ import Card from '../../common/components/Card';
 import Header from '../../common/layout/Header';
 import light from '../../styles/themes/light';
 import api from '../../common/services/api';
+import Text from '../../common/components/Text';
 
 import { Container, Content, FilterButton } from './styles';
 import Filter from './Filter';
@@ -12,26 +13,22 @@ import { Form, Teacher } from './types';
 
 const Teachers: React.FC = () => {
   const [teachers, setTeachers] = useState<Teacher[]>();
-
   const [isFilterVisible, setIsFilterVisible] = useState(true);
 
   async function getTeachers(filter: Form): Promise<Teacher[]> {
     const { daysOfWeek, time, subject } = filter;
 
-    // const teacherList = await api
-    //   .get<Teacher[]>('classes', {
-    //     params: {
-    //       ...(daysOfWeek && { daysOfWeek }),
-    //       ...(time && { time }),
-    //       ...(subject && { subject }),
-    //     },
-    //   })
-    //   .then((response) => response.data)
-    //   .catch((error) => console.log(error));
+    const params = {
+      ...(daysOfWeek && { week_day: daysOfWeek }),
+      ...(time && { time }),
+      ...(subject && { subject }),
+    };
 
-    // if (teachers) {
-    //   return teacherList;
-    // } throw Error.
+    const list = await api
+      .get<Teacher[]>('classes', { params })
+      .then((response) => response.data);
+
+    return list;
   }
 
   function handleToggleFilter() {
@@ -39,8 +36,8 @@ const Teachers: React.FC = () => {
   }
 
   async function handleSubmit(form: Form) {
-    console.log(form);
     const list = await getTeachers(form);
+
     setTeachers(list);
     setIsFilterVisible(false);
   }
@@ -62,7 +59,20 @@ const Teachers: React.FC = () => {
         {isFilterVisible && <Filter onSubmit={(form) => handleSubmit(form)} />}
       </Header>
       <Content>
-        {teachers && teachers.map((teacher) => <Card teacher={teacher} />)}
+        {teachers &&
+          teachers.map((teacher) => (
+            <Card key={teacher.id} teacher={teacher} />
+          ))}
+        {teachers?.length === 0 && (
+          <Text color="base" fontFamily="Archivo" size="small">
+            Nenhum proffy foi encontrado para sua busca
+          </Text>
+        )}
+        {!teachers && (
+          <Text color="light" fontFamily="Poppins" size="medium">
+            Preencha as informações para encontrar um proffy
+          </Text>
+        )}
       </Content>
     </Container>
   );

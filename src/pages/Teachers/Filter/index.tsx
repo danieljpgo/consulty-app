@@ -41,16 +41,16 @@ const Filter: React.FC<Props> = (props) => {
         flex={0}
         label="Matéria"
         placeholder="Qual a matéria?"
-        value={daysOfWeek}
-        onChangeText={(text) => handleDaysOfWeek(text)}
+        value={subject}
+        onChangeText={(text) => handleSubjectChange(text)}
       />
       <Wrapper>
         <TextInputField
           flex={4}
           label="Dia da semana"
           placeholder="Dia desejado?"
-          value={subject}
-          onChangeText={(text) => handleSubjectChange(text)}
+          value={daysOfWeek}
+          onChangeText={(text) => handleDaysOfWeek(text)}
         />
         <Spacing width={1.5} />
         <TextInputField
