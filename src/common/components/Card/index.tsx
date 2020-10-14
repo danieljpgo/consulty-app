@@ -22,8 +22,8 @@ import {
 } from './styles';
 
 interface Props {
-  liked?: boolean;
   teacher: Teacher;
+  liked?: boolean;
   onFavorite: (id: string) => void;
 }
 
@@ -35,8 +35,8 @@ const Card: React.FC<Props> = (props) => {
     Linking.openURL(`whatsapp://send?phone=${whatsappNumber}`);
   }
 
-  function handleFavoriteClick(favoritedId: string) {
-    onFavorite(favoritedId);
+  function handleFavoriteClick(favoritedId: number) {
+    onFavorite(favoritedId.toString());
   }
 
   return (

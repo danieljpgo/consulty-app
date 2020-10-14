@@ -21,15 +21,22 @@ import {
 
 const Landing: React.FC = () => {
   const [totalConnection, setTotalConnection] = useState(0);
+  const [isError, setIsError] = useState(false);
 
   const navigation = useNavigation();
 
   useEffect(() => {
     const getTotalConnection = async () => {
-      const { total } = await api
-        .get<{ total: number }>('connections/count')
-        .then((response) => response.data);
-      setTotalConnection(total);
+      try {
+        const { total } = await api
+          .get<{ total: number }>('connections/count')
+          .then((response) => response.data);
+
+        setTotalConnection(total);
+        setIsError(false);
+      } catch {
+        setIsError(true);
+      }
     };
 
     getTotalConnection();
@@ -73,7 +80,9 @@ const Landing: React.FC = () => {
           </Button>
         </ActionsContainer>
         <Connetions fontFamily="Poppins" size="small" color="light">
-          {labelConnection}
+          {isError
+            ? 'Error ao buscar os dados de conexão, tentar novamente mais tarde '
+            : labelConnection}
           <Image source={heartIcon} />
         </Connetions>
       </Content>
