@@ -47,6 +47,7 @@ const theme = {
       constrast: colors.gray['100'],
       input: colors.gray['400'],
       placeholder: colors.gray['500'],
+      active: colors.gray['450'],
     },
     lines: {
       constrast: colors.gray['200'],

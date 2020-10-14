@@ -24,7 +24,7 @@ import {
 interface Props {
   liked?: boolean;
   teacher: Teacher;
-  onFavorite: () => void;
+  onFavorite: (id: string) => void;
 }
 
 const Card: React.FC<Props> = (props) => {

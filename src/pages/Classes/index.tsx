@@ -7,10 +7,10 @@ import Button from '../../common/components/Button';
 import { Container, BackgroundImg, Description, PageTitle } from './styles';
 
 const Classes: React.FC = () => {
-  const { goBack } = useNavigation();
+  const navigation = useNavigation();
 
   function handleNavigateBack() {
-    goBack();
+    navigation.goBack();
   }
 
   return (
@@ -26,12 +26,12 @@ const Classes: React.FC = () => {
       </BackgroundImg>
 
       <Button
-        onPress={() => handleNavigateBack()}
-        variants="secundary"
         size="small"
         align="center"
+        variants="secundary"
+        onPress={() => handleNavigateBack()}
       >
-        ok
+        Ok
       </Button>
     </Container>
   );

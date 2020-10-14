@@ -19,6 +19,8 @@ interface Colors {
     base: string;
     constrast: string;
     input: string;
+    placeholder: string;
+    active: string;
   };
   lines: {
     constrast: string;

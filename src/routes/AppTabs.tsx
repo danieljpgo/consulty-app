@@ -35,8 +35,8 @@ const AppTabs: React.FC = () => {
           marginLeft: themeContext.unit,
         },
         inactiveBackgroundColor: themeContext.colors.surface.constrast,
-        activeBackgroundColor: '#ebebf5',
-        inactiveTintColor: '#c1cbcc',
+        activeBackgroundColor: themeContext.colors.surface.active,
+        inactiveTintColor: themeContext.colors.surface.placeholder,
         activeTintColor: themeContext.colors.title.main,
       }}
     >

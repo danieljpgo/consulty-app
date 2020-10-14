@@ -21,6 +21,7 @@ import {
 
 const Landing: React.FC = () => {
   const [totalConnection, setTotalConnection] = useState(0);
+
   const navigation = useNavigation();
 
   useEffect(() => {
@@ -34,7 +35,7 @@ const Landing: React.FC = () => {
     getTotalConnection();
   }, []);
 
-  function handleNavigatePage(router: string) {
+  function handleNavigate(router: string) {
     navigation.navigate(router);
   }
 
@@ -43,7 +44,6 @@ const Landing: React.FC = () => {
   return (
     <Container>
       <Hero source={heroImg} style={{ resizeMode: 'contain' }} />
-
       <Content>
         <Title color="constrast" fontFamily="Poppins" size="large">
           Seja bem-vindo
@@ -51,14 +51,13 @@ const Landing: React.FC = () => {
         <Title color="constrast" fontFamily="Poppins" size="large" bold>
           O que deseja fazer?
         </Title>
-
         <ActionsContainer>
           <Button
             flex={1}
             size="large"
             variants="primary"
             source={studyIcon}
-            onPress={() => handleNavigatePage('Tabs')}
+            onPress={() => handleNavigate('Tabs')}
           >
             Estudar
           </Button>
@@ -68,12 +67,11 @@ const Landing: React.FC = () => {
             size="large"
             variants="secundary"
             source={giveClassesIcon}
-            onPress={() => handleNavigatePage('Classes')}
+            onPress={() => handleNavigate('Classes')}
           >
             Dar Aulas
           </Button>
         </ActionsContainer>
-
         <Connetions fontFamily="Poppins" size="small" color="light">
           {labelConnection}
           <Image source={heartIcon} />
