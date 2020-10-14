@@ -24,14 +24,19 @@ import {
 interface Props {
   liked?: boolean;
   teacher: Teacher;
+  onFavorite: () => void;
 }
 
 const Card: React.FC<Props> = (props) => {
-  const { liked, teacher } = props;
-  const { avatar, bio, cost, name, subject, user_id, whatsapp } = teacher;
+  const { liked, teacher, onFavorite } = props;
+  const { avatar, bio, cost, name, subject, user_id, whatsapp, id } = teacher;
 
   function handleLinkToWhatsapp(whatsappNumber: string) {
     Linking.openURL(`whatsapp://send?phone=${whatsappNumber}`);
+  }
+
+  function handleFavoriteClick(favoritedId: string) {
+    onFavorite(favoritedId);
   }
 
   return (
@@ -71,6 +76,7 @@ const Card: React.FC<Props> = (props) => {
             size="small"
             align="center"
             variants={liked ? 'error' : 'primary'}
+            onPress={() => handleFavoriteClick(id)}
             source={liked ? unfavorite : heartIcon}
           />
           <Spacing width={1} />
