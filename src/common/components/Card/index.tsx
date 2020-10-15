@@ -1,5 +1,4 @@
 import React from 'react';
-import { Linking } from 'react-native';
 
 import Text from '../Text';
 import Title from '../Title';
@@ -25,6 +24,7 @@ interface Props {
   teacher: Teacher;
   favorited?: boolean;
   onFavorite: (teacher: Teacher) => void;
+  onLinkToWhatsapp: (whatsapp: string, userId: number) => void;
 }
 
 const Card: React.FC<Props> = (props) => {
@@ -32,11 +32,11 @@ const Card: React.FC<Props> = (props) => {
   const { avatar, bio, cost, name, subject, user_id, whatsapp, id } = teacher;
 
   function handleLinkToWhatsapp(whatsappNumber: string) {
-    Linking.openURL(`whatsapp://send?phone=${whatsappNumber}`);
+    onLinkToWhatsapp(whatsappNumber);
   }
 
-  function handleToggleFavorite(favoriteTeacher: Teacher) {
-    onFavorite(favoriteTeacher);
+  function handleToggleFavorite(favoriteTeacher: Teacher, userId: number) {
+    onFavorite(favoriteTeacher, userId);
   }
 
   return (
@@ -87,7 +87,7 @@ const Card: React.FC<Props> = (props) => {
             flexDirection="row"
             variants="secundary"
             source={whatsappIcon}
-            onPress={() => handleLinkToWhatsapp(whatsapp)}
+            onPress={() => handleLinkToWhatsapp(whatsapp, user_id)}
           >
             Entrar em contato
           </Button>

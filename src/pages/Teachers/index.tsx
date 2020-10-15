@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Feather } from '@expo/vector-icons';
-import { useFocusEffect } from '@react-navigation/native';
+import { Linking } from 'react-native';
 
 import Card from '../../common/components/Card';
 import Header from '../../common/layout/Header';
@@ -45,6 +45,10 @@ const Teachers: React.FC = () => {
     return response;
   }
 
+  function handleToggleFilter() {
+    setIsFilterVisible((prev) => !prev);
+  }
+
   async function handleSubmit(form: Form) {
     try {
       const list = await getTeachers(form);
@@ -56,8 +60,15 @@ const Teachers: React.FC = () => {
     setIsFilterVisible(false);
   }
 
-  function handleToggleFilter() {
-    setIsFilterVisible((prev) => !prev);
+  async function handleLinkToWhatsapp(whatsapp: string, user_id: number) {
+    try {
+      await Linking.openURL(`whatsapp://send?phone=${whatsapp}`);
+      api.post('connections', {
+        user_id,
+      });
+    } catch {
+      console.log('error');
+    }
   }
 
   function handleToggleFavorite(
@@ -81,8 +92,6 @@ const Teachers: React.FC = () => {
       ]);
     }
   }
-
-  asyncStorage.log();
 
   return (
     <Container>
@@ -109,6 +118,9 @@ const Teachers: React.FC = () => {
               favorited={!!favorites.find((f) => f.id === teacher.id)}
               onFavorite={(favoritedTeacher) =>
                 handleToggleFavorite(favoritedTeacher, favorites)
+              }
+              onLinkToWhatsapp={(whatsapp, userId) =>
+                handleLinkToWhatsapp(whatsapp, userId)
               }
             />
           ))}

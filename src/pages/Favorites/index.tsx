@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { useFocusEffect } from '@react-navigation/native';
+import { Linking } from 'react-native';
 
 import Card from '../../common/components/Card';
 import Header from '../../common/layout/Header';
 import asyncStorage from '../../common/utils/asyncStorage';
 import { Teacher } from '../Teachers/types';
+import api from '../../common/services/api';
 
 import { Container, Content } from './styles';
 
@@ -44,6 +46,17 @@ const Favorites: React.FC = () => {
     }
   }
 
+  async function handleLinkToWhatsapp(whatsapp: string, user_id: number) {
+    try {
+      await Linking.openURL(`whatsapp://send?phone=${whatsapp}`);
+      api.post('connections', {
+        user_id,
+      });
+    } catch {
+      console.log('error');
+    }
+  }
+
   return (
     <Container>
       <Header title="Meus proffys favoritos" />
@@ -56,6 +69,9 @@ const Favorites: React.FC = () => {
               favorited={!!favorites.find((f) => f.id === teacher.id)}
               onFavorite={(favoritedTeacher) =>
                 handleToggleFavorite(favoritedTeacher, favorites)
+              }
+              onLinkToWhatsapp={(whatsapp, userId) =>
+                handleLinkToWhatsapp(whatsapp, userId)
               }
             />
           ))}
