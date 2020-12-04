@@ -39,8 +39,8 @@ const Filter: React.FC<Props> = (props) => {
     <Container>
       <TextInputField
         flex={0}
-        label="Matéria"
-        placeholder="Qual a matéria?"
+        label="Tema"
+        placeholder="Qual o tema?"
         value={subject}
         onChangeText={(text) => handleSubjectChange(text)}
       />

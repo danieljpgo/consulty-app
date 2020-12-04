@@ -39,7 +39,7 @@ const List: React.FC<Props> = (props) => {
             fontFamily="Archivo"
             style={{ textAlign: 'center' }}
           >
-            Preencha o filtro para encontrar um proffy a sua cara {':)'}
+            Preencha o filtro para encontrar um consultor a sua cara {':)'}
           </Text>
         </MessageContainer>
       )}
@@ -52,7 +52,7 @@ const List: React.FC<Props> = (props) => {
             fontFamily="Archivo"
             style={{ textAlign: 'center' }}
           >
-            Nenhum proffy foi encontrado para sua busca {':('}
+            Nenhum consultor foi encontrado para sua busca {':('}
           </Text>
         </MessageContainer>
       )}

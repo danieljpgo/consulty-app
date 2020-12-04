@@ -19,7 +19,7 @@ import {
   Content,
 } from './styles';
 
-const Landing: React.FC = () => {
+const Landing = () => {
   const [totalConnection, setTotalConnection] = useState(0);
   const [isError, setIsError] = useState(false);
 
