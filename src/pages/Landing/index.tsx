@@ -83,7 +83,7 @@ const Landing: React.FC = () => {
           {isError
             ? 'Error ao buscar os dados de conexão, tentar novamente mais tarde '
             : labelConnection}
-          <Image source={heartIcon} />
+          {!isError && <Image source={heartIcon} />}
         </Connetions>
       </Content>
     </Container>

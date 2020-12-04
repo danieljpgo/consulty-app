@@ -1,10 +1,9 @@
 import React from 'react';
 import { useNavigation } from '@react-navigation/native';
 
-import backgroundClassesPage from '../../common/assets/images/give-classes-background.png';
 import Button from '../../common/components/Button';
 
-import { Container, BackgroundImg, Description, PageTitle } from './styles';
+import { Container, Content, Description, PageTitle } from './styles';
 
 const Classes: React.FC = () => {
   const navigation = useNavigation();
@@ -15,15 +14,15 @@ const Classes: React.FC = () => {
 
   return (
     <Container>
-      <BackgroundImg resizeMode="contain" source={backgroundClassesPage}>
+      <Content>
         <PageTitle fontFamily="Archivo" size="xlarge" color="constrast" bold>
-          Quer ser um proffy?
+          Quer ser um consultor?
         </PageTitle>
-        <Description fontFamily="Poppins" size="medium" color="light">
-          Para começar, você precisa se cadastrar como professor na nossa
-          plataforma web
+        <Description fontFamily="Poppins" size="large" color="light">
+          Para começar, você precisa se cadastrar como um em nossa plataforma
+          web
         </Description>
-      </BackgroundImg>
+      </Content>
 
       <Button
         size="small"

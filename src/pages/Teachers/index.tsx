@@ -76,7 +76,9 @@ const Teachers: React.FC = () => {
     favoriteds: Teacher[]
   ) {
     const { id } = favoritedTeacher;
-    const hasFavorited = !!favoriteds.find((teacher) => teacher.id === id);
+    const hasFavorited = Boolean(
+      favoriteds.find((teacher) => teacher.id === id)
+    );
 
     if (hasFavorited) {
       setFavorites((prev) => prev.filter((favorite) => favorite.id !== id));
@@ -96,7 +98,7 @@ const Teachers: React.FC = () => {
   return (
     <Container>
       <Header
-        title="Proffys disponíveis"
+        title="Consultores disponíveis"
         action={
           <FilterButton onPress={() => handleToggleFilter()}>
             <Feather
@@ -115,7 +117,7 @@ const Teachers: React.FC = () => {
             <Card
               key={teacher.id}
               teacher={teacher}
-              favorited={!!favorites.find((f) => f.id === teacher.id)}
+              favorited={Boolean(favorites.find((f) => f.id === teacher.id))}
               onFavorite={(favoritedTeacher) =>
                 handleToggleFavorite(favoritedTeacher, favorites)
               }

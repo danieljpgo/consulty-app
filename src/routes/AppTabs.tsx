@@ -44,7 +44,7 @@ const AppTabs: React.FC = () => {
         name="Teachers"
         component={Teachers}
         options={{
-          tabBarLabel: 'Proffys',
+          tabBarLabel: 'Consultores',
           tabBarIcon: ({ color, size, focused }) => (
             <Ionicons
               name="ios-easel"

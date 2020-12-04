@@ -35,7 +35,7 @@ const Button: React.FC<Props> = (props) => {
       flex={flex}
       flexDirection={flexDirection}
     >
-      {source && <Image spacing={!!flexDirection} source={source} />}
+      {source && <Image spacing={Boolean(flexDirection)} source={source} />}
       {children && <Text>{children}</Text>}
     </Container>
   );

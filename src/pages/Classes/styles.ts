@@ -10,7 +10,7 @@ export const Container = styled.View`
   padding: ${(props) => props.theme.unit * 2}px;
 `;
 
-export const BackgroundImg = styled.ImageBackground`
+export const Content = styled.View`
   flex: 1;
   justify-content: center;
   margin-bottom: ${(props) => props.theme.unit * 2}px;

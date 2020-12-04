@@ -3,7 +3,7 @@ import { useNavigation } from '@react-navigation/native';
 import { Image } from 'react-native';
 
 import backIcon from '../../assets/images/icons/back.png';
-import logoImg from '../../assets/images/logo.png';
+import Text from '../../components/Text';
 
 import { Container, Navbar, BackButton, Title, Content } from './styles';
 
@@ -29,7 +29,9 @@ const Header: React.FC<Props> = (props) => {
         </BackButton>
 
         <BackButton onPress={() => handleNavigateBack()}>
-          <Image source={logoImg} resizeMode="contain" />
+          <Text fontFamily="Archivo" size="medium" color="light" bold>
+            Consulty
+          </Text>
         </BackButton>
       </Navbar>
 

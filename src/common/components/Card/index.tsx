@@ -5,7 +5,7 @@ import Title from '../Title';
 import Button from '../Button';
 import heartIcon from '../../assets/images/icons/heart-outline.png';
 import unfavorite from '../../assets/images/icons/unfavorite.png';
-import whatsappIcon from '../../assets/images/icons/whatsapp.png';
+// import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 import { Spacing } from '../Spacing';
 import { Teacher } from '../../../pages/Teachers/types';
 
@@ -23,16 +23,16 @@ import {
 interface Props {
   teacher: Teacher;
   favorited?: boolean;
-  onFavorite: (teacher: Teacher) => void;
+  onFavorite: (teacher: Teacher, userId: number) => void;
   onLinkToWhatsapp: (whatsapp: string, userId: number) => void;
 }
 
-const Card: React.FC<Props> = (props) => {
+const Card = (props: Props) => {
   const { favorited, teacher, onFavorite, onLinkToWhatsapp } = props;
-  const { avatar, bio, cost, name, subject, user_id, whatsapp, id } = teacher;
+  const { avatar, bio, cost, name, subject, user_id, whatsapp } = teacher;
 
-  function handleLinkToWhatsapp(whatsappNumber: string) {
-    onLinkToWhatsapp(whatsappNumber);
+  function handleLinkToWhatsapp(whatsappNumber: string, userId: number) {
+    onLinkToWhatsapp(whatsappNumber, userId);
   }
 
   function handleToggleFavorite(favoriteTeacher: Teacher, userId: number) {
@@ -43,11 +43,7 @@ const Card: React.FC<Props> = (props) => {
     <Container>
       <Content>
         <Header>
-          <Avatar
-            source={{
-              uri: avatar,
-            }}
-          />
+          <Avatar source={{ uri: avatar }} />
           <Profile>
             <Title color="base" size="large" fontFamily="Archivo" bold>
               {name}
@@ -76,8 +72,8 @@ const Card: React.FC<Props> = (props) => {
             size="small"
             align="center"
             variants={favorited ? 'error' : 'primary'}
-            onPress={() => handleToggleFavorite(teacher)}
             source={favorited ? unfavorite : heartIcon}
+            onPress={() => handleToggleFavorite(teacher, user_id)}
           />
           <Spacing width={1} />
           <Button
@@ -86,7 +82,7 @@ const Card: React.FC<Props> = (props) => {
             align="center"
             flexDirection="row"
             variants="secundary"
-            source={whatsappIcon}
+            // source={whatsappIcon}
             onPress={() => handleLinkToWhatsapp(whatsapp, user_id)}
           >
             Entrar em contato

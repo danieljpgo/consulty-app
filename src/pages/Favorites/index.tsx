@@ -10,7 +10,7 @@ import api from '../../common/services/api';
 
 import { Container, Content } from './styles';
 
-const Favorites: React.FC = () => {
+const Favorites = () => {
   const [favorites, setFavorites] = useState<Teacher[]>([]);
 
   useFocusEffect(() => {
@@ -29,7 +29,9 @@ const Favorites: React.FC = () => {
     favoriteds: Teacher[]
   ) {
     const { id } = favoritedTeacher;
-    const hasFavorited = !!favoriteds.find((teacher) => teacher.id === id);
+    const hasFavorited = Boolean(
+      favoriteds.find((teacher) => teacher.id === id)
+    );
 
     if (hasFavorited) {
       setFavorites((prev) => prev.filter((favorite) => favorite.id !== id));
@@ -46,27 +48,28 @@ const Favorites: React.FC = () => {
     }
   }
 
-  async function handleLinkToWhatsapp(whatsapp: string, user_id: number) {
+  async function handleLinkToWhatsapp(whatsapp: string, userId: number) {
     try {
       await Linking.openURL(`whatsapp://send?phone=${whatsapp}`);
       api.post('connections', {
-        user_id,
+        user_id: userId,
       });
     } catch {
+      // @TODO add toaster for error display
       console.log('error');
     }
   }
 
   return (
     <Container>
-      <Header title="Meus proffys favoritos" />
+      <Header title="Consultores favoritos" />
       <Content>
         {favorites &&
           favorites.map((teacher) => (
             <Card
               key={teacher.id}
               teacher={teacher}
-              favorited={!!favorites.find((f) => f.id === teacher.id)}
+              favorited={Boolean(favorites.find((f) => f.id === teacher.id))}
               onFavorite={(favoritedTeacher) =>
                 handleToggleFavorite(favoritedTeacher, favorites)
               }

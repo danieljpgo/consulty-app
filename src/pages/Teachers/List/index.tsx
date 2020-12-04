@@ -25,7 +25,8 @@ const List: React.FC<Props> = (props) => {
             fontFamily="Archivo"
             style={{ textAlign: 'center' }}
           >
-            Error ao buscar os dados dos proffys, tentar novamente mais tarde
+            Error ao buscar os dados dos consultores, tentar novamente mais
+            tarde
           </Text>
         </MessageContainer>
       )}
