@@ -8,14 +8,28 @@ import { Container, MessageContainer } from './styles';
 interface Props {
   teachers: Teacher[] | undefined;
   isError: boolean;
+  isLoading: boolean;
 }
 
 const List: React.FC<Props> = (props) => {
-  const { teachers, isError, children } = props;
+  const { teachers, isError, isLoading, children } = props;
 
   return (
     <Container>
       {children}
+      {isLoading && (
+        <MessageContainer>
+          <Text
+            bold
+            size="large"
+            color="base"
+            fontFamily="Archivo"
+            style={{ textAlign: 'center' }}
+          >
+            Buscando seus consultores...
+          </Text>
+        </MessageContainer>
+      )}
       {isError && (
         <MessageContainer>
           <Text
@@ -30,7 +44,7 @@ const List: React.FC<Props> = (props) => {
           </Text>
         </MessageContainer>
       )}
-      {!isError && !teachers && (
+      {!isError && !teachers && !isLoading && (
         <MessageContainer>
           <Text
             bold

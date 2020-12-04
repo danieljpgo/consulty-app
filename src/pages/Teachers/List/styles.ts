@@ -1,6 +1,6 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.View`
+export const Container = styled.ScrollView`
   flex: 1;
   padding: 0 ${(props) => props.theme.unit * 1}px;
   margin-top: ${(props) => -props.theme.unit * 4}px;

@@ -16,8 +16,9 @@ import List from './List';
 const Teachers: React.FC = () => {
   const [teachers, setTeachers] = useState<Teacher[]>();
   const [favorites, setFavorites] = useState<Teacher[]>([]);
-  const [isFilterVisible, setIsFilterVisible] = useState(true);
+  const [isFilterVisible, setIsFilterVisible] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     async function getFavoritesTeachers() {
@@ -27,7 +28,22 @@ const Teachers: React.FC = () => {
       }
     }
 
+    async function getInitialTeachers() {
+      setIsLoading(true);
+      try {
+        await api
+          .get<Teacher[]>('classes')
+          .then((res) => setTeachers(res.data))
+          .then(() => setIsLoading(false));
+      } catch (e) {
+        setIsError(true);
+        setIsLoading(false);
+        setTeachers([]);
+      }
+    }
+
     getFavoritesTeachers();
+    getInitialTeachers();
   }, []);
 
   async function getTeachers(filter: Form): Promise<Teacher[]> {
@@ -111,7 +127,7 @@ const Teachers: React.FC = () => {
       >
         {isFilterVisible && <Filter onSubmit={(form) => handleSubmit(form)} />}
       </Header>
-      <List teachers={teachers} isError={isError}>
+      <List teachers={teachers} isError={isError} isLoading={isLoading}>
         {teachers &&
           teachers.map((teacher) => (
             <Card
