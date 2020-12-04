@@ -46,7 +46,7 @@ const Landing = () => {
     navigation.navigate(router);
   }
 
-  const labelConnection = `Total de ${totalConnection} conexões já realizadas`;
+  const labelConnection = `Total de ${totalConnection} conexões já realizadas  `;
 
   return (
     <Container>
@@ -81,7 +81,7 @@ const Landing = () => {
         </ActionsContainer>
         <Connetions fontFamily="Poppins" size="small" color="light">
           {isError
-            ? 'Error ao buscar os dados de conexão, tentar novamente mais tarde '
+            ? 'Error ao buscar os dados de conexão, tentar novamente mais tarde'
             : labelConnection}
           {!isError && <Image source={heartIcon} />}
         </Connetions>

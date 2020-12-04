@@ -5,7 +5,6 @@ import Title from '../Title';
 import Button from '../Button';
 import heartIcon from '../../assets/images/icons/heart-outline.png';
 import unfavorite from '../../assets/images/icons/unfavorite.png';
-// import whatsappIcon from '../../assets/images/icons/whatsapp.png';
 import { Spacing } from '../Spacing';
 import { Teacher } from '../../../pages/Teachers/types';
 
@@ -82,7 +81,6 @@ const Card = (props: Props) => {
             align="center"
             flexDirection="row"
             variants="secundary"
-            // source={whatsappIcon}
             onPress={() => handleLinkToWhatsapp(whatsapp, user_id)}
           >
             Entrar em contato
