@@ -36,7 +36,7 @@
      <img alt="License" src="https://img.shields.io/badge/license-MIT-1b263b?style=flat&labelColor=2f4858">
 </p>
 
-> TODO:clipboard:
+> A marketplace to find a consultant for your next step. :clipboard:
 
 &nbsp;
 
@@ -58,10 +58,14 @@
 </div> -->
 
 ## Project
-TODO
+The project is a platform where it is possible to connect consultants to people seeking consultancy, enabling registration as a consultant as well.
 
 ## Features
-TODO
+The main features of the project are:
+- Search for consultants.
+- Integration with Whatsapp.
+- Total number of contacts created.
+- Favorite your consultants.
 
 ## Integrations
 This project is part of the **Consulty** system, the other projects are located at:
