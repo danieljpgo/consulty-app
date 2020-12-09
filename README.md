@@ -40,22 +40,22 @@
 
 &nbsp;
 
-<div align="center">
+<p align="center">
    <a href="#project">Project</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#features">Features</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#integrations">Integrations</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#getting-started">Getting Started</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
    <a href="#license">License</a>
-</div>
+</p>
 
-<!-- <div align="center">
+<div align="center">
    <img
-      alt="Post Motion"
-      title="Post Motion"
-      src=".github/web-mobile.gif"
-      width="640px" />
-</div> -->
+      alt="Consulty Mobile"
+      title="Consulty Mobile"
+      src=".github/anim.gif"
+      width="230px" />
+</div>
 
 ## Project
 The project is a platform where it is possible to connect consultants to people seeking consultancy, enabling registration as a consultant as well.
